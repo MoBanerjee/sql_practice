@@ -1,0 +1,5 @@
+SELECT PRODUCT_NAME,YEAR,PRICE
+FROM SALES,PRODUCT
+WHERE SALES.PRODUCT_ID=PRODUCT.PRODUCT_ID
+
+https://leetcode.com/problems/product-sales-analysis-i/description/?envType=study-plan-v2&envId=top-sql-50
