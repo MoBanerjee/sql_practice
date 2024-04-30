@@ -1,0 +1,8 @@
+SELECT V.CUSTOMER_ID AS customer_id,COUNT(*) as count_no_trans
+FROM VISITS V
+LEFT OUTER JOIN TRANSACTIONS T
+ON V.VISIT_ID=T.VISIT_ID
+WHERE T.AMOUNT IS NULL and t.transaction_id is null
+GROUP BY V.CUSTOMER_ID
+
+https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/description/?envType=study-plan-v2&envId=top-sql-50
