@@ -1,0 +1,7 @@
+select T.machine_id,round(avg(T.processing_time),3) as processing_time
+FROM (SELECT table_start.machine_id,table_start.process_id,table_end.timestamp-table_start.timestamp as processing_time
+from activity as table_end join activity as table_start on table_start.machine_id=table_end.machine_id
+and table_start.process_id=table_end.process_id and table_start.activity_type='start' and table_end.activity_type='end') as T
+group by T.machine_id
+
+https://leetcode.com/problems/average-time-of-process-per-machine/description/?envType=study-plan-v2&envId=top-sql-50
