@@ -1,0 +1,4 @@
+select E2.name from employee E1 join employee E2
+on E1.managerId is not null and E1.managerId=E2.id 
+group by E1.managerId
+having count(*)>4
